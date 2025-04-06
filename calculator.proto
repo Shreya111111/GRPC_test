@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package calculator;
+
+message NumberPair {
+  float a = 1;
+  float b = 2;
+}
+
+message Number {
+  float value = 1;
+}
+
+service Calculator {
+  rpc SquareRoot (Number) returns (Number);
+  rpc Add (NumberPair) returns (Number);
+  rpc Subtract (NumberPair) returns (Number);
+  rpc Multiply (NumberPair) returns (Number);
+  rpc Divide (NumberPair) returns (Number);
+}
